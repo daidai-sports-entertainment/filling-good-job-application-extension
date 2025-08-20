@@ -1,0 +1,495 @@
+/* Job AutoFill Sidebar */
+#job-autofill-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  right: -320px !important;
+  width: 320px !important;
+  height: 100vh !important;
+  background: white !important;
+  border-left: 2px solid #667eea !important;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15) !important;
+  z-index: 2147483647 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 13px !important;
+  transition: right 0.3s ease !important;
+  overflow-y: auto !important;
+}
+
+#job-autofill-sidebar.open {
+  right: 0 !important;
+}
+
+/* Header */
+.sidebar-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  padding: 16px !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1 !important;
+}
+
+.sidebar-header h2 {
+  margin: 0 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.sidebar-header p {
+  margin: 4px 0 0 0 !important;
+  font-size: 11px !important;
+  opacity: 0.9 !important;
+}
+
+/* Close button */
+.sidebar-close-btn {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  width: 30px !important;
+  height: 30px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 15px !important;
+  color: white !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.sidebar-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Content */
+.sidebar-content {
+  padding: 0 !important;
+  overflow-y: auto !important;
+}
+
+/* Profile Section */
+.profile-section {
+  padding: 16px !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.profile-header {
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 16px !important;
+}
+
+/* Profile List with Action Buttons */
+.profile-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.profile-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 4px !important;
+  border-radius: 6px !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.profile-item:hover {
+  background-color: #f7fafc !important;
+}
+
+.profile-button {
+  flex: 1 !important;
+  text-align: left !important;
+  padding: 10px 12px !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  color: #4a5568 !important;
+}
+
+.profile-button:hover {
+  background: #edf2f7 !important;
+  border-color: #cbd5e0 !important;
+}
+
+.profile-button.selected {
+  background: #667eea !important;
+  color: white !important;
+  border-color: #667eea !important;
+}
+
+.profile-actions {
+  display: flex !important;
+  gap: 4px !important;
+}
+
+.profile-edit-btn,
+.profile-export-btn,
+.profile-delete-btn {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.profile-edit-btn {
+  background: #e6fffa !important;
+  border: 1px solid #81e6d9 !important;
+}
+
+.profile-edit-btn:hover {
+  background: #81e6d9 !important;
+  border-color: #4fd1c7 !important;
+  transform: scale(1.05) !important;
+}
+
+.profile-export-btn {
+  background: #f0fff4 !important;
+  border: 1px solid #9ae6b4 !important;
+}
+
+.profile-export-btn:hover {
+  background: #9ae6b4 !important;
+  border-color: #68d391 !important;
+  transform: scale(1.05) !important;
+}
+
+.profile-delete-btn {
+  background: #fed7d7 !important;
+  border: 1px solid #feb2b2 !important;
+}
+
+.profile-delete-btn:hover {
+  background: #fc8181 !important;
+  border-color: #f56565 !important;
+  transform: scale(1.05) !important;
+}
+
+.no-profiles-message {
+  text-align: center !important;
+  color: #718096 !important;
+  font-size: 12px !important;
+  padding: 20px !important;
+  background: #f7fafc !important;
+  border-radius: 6px !important;
+  font-style: italic !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #667eea !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease !important;
+}
+
+.btn-primary:hover {
+  background: #5a67d8 !important;
+}
+
+.btn-secondary {
+  background: #e2e8f0 !important;
+  color: #4a5568 !important;
+  border: none !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease !important;
+  margin-top: 8px !important;
+}
+
+.btn-secondary:hover {
+  background: #cbd5e0 !important;
+}
+
+/* Quick Copy Section */
+#quick-copy-section {
+  padding: 16px !important;
+  max-height: calc(100vh - 200px) !important;
+  overflow-y: auto !important;
+}
+
+#quick-copy-section h3 {
+  margin: 0 0 16px 0 !important;
+  font-size: 16px !important;
+  color: #2d3748 !important;
+}
+
+.copy-group {
+  margin-bottom: 16px !important;
+}
+
+.copy-group label {
+  display: block !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #4a5568 !important;
+  margin-bottom: 8px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.copy-buttons {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 6px !important;
+}
+
+.copy-buttons.three-col {
+  grid-template-columns: 1fr 1fr 1fr !important;
+}
+
+.copy-btn {
+  background: #f7fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 10px 8px !important;
+  border-radius: 6px !important;
+  font-size: 11px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-align: center !important;
+  color: #4a5568 !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  min-width: 0 !important;
+  position: relative !important;
+}
+
+.copy-btn:hover {
+  background: #edf2f7 !important;
+  border-color: #cbd5e0 !important;
+  transform: translateY(-1px) !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  z-index: 10 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Tooltip for long text */
+.copy-btn[title] {
+  cursor: pointer !important;
+}
+
+/* Profile Form */
+#profile-form {
+  padding: 16px !important;
+  max-height: calc(100vh - 100px) !important;
+  overflow-y: auto !important;
+}
+
+#profile-form h3 {
+  margin: 0 0 16px 0 !important;
+  font-size: 16px !important;
+  color: #2d3748 !important;
+}
+
+.form-section {
+  margin-bottom: 20px !important;
+}
+
+.form-section h4 {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #4a5568 !important;
+  margin: 0 0 8px 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.form-input {
+  width: 100% !important;
+  padding: 10px 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  margin-bottom: 8px !important;
+  transition: border-color 0.2s ease !important;
+  box-sizing: border-box !important;
+}
+
+.form-input:focus {
+  outline: none !important;
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+.form-textarea {
+  width: 100% !important;
+  padding: 10px 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  margin-bottom: 8px !important;
+  min-height: 60px !important;
+  resize: vertical !important;
+  font-family: inherit !important;
+  transition: border-color 0.2s ease !important;
+  box-sizing: border-box !important;
+}
+
+.form-textarea:focus {
+  outline: none !important;
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+/* Dynamic field items */
+.work-experience-item,
+.education-item {
+  background: #f8fafc !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
+  margin-bottom: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.exp-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 10px !important;
+}
+
+.exp-header span {
+  font-weight: 600 !important;
+  color: #4a5568 !important;
+  font-size: 13px !important;
+}
+
+.remove-btn {
+  background: #fed7d7 !important;
+  border: 1px solid #feb2b2 !important;
+  color: #c53030 !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.remove-btn:hover {
+  background: #fc8181 !important;
+  border-color: #f56565 !important;
+}
+
+/* Skill and Certification items */
+.skill-item,
+.cert-item {
+  display: flex !important;
+  gap: 8px !important;
+  margin-bottom: 8px !important;
+  align-items: center !important;
+}
+
+.skill-input,
+.cert-input {
+  flex: 1 !important;
+}
+
+.remove-field-btn {
+  width: 28px !important;
+  height: 28px !important;
+  background: #fed7d7 !important;
+  border: 1px solid #feb2b2 !important;
+  border-radius: 4px !important;
+  color: #c53030 !important;
+  font-size: 18px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.remove-field-btn:hover {
+  background: #fc8181 !important;
+  border-color: #f56565 !important;
+}
+
+.form-buttons {
+  display: flex !important;
+  gap: 8px !important;
+  margin-top: 16px !important;
+}
+
+.form-buttons button {
+  flex: 1 !important;
+}
+
+/* Status Toast */
+.status-toast {
+  position: fixed !important;
+  top: 20px !important;
+  right: 50% !important;
+  transform: translateX(50%) !important;
+  background: #48bb78 !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  z-index: 2147483648 !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.status-toast.show {
+  opacity: 1 !important;
+}
+
+.status-toast.error {
+  background: #e53e3e !important;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+/* Scrollbar */
+#job-autofill-sidebar::-webkit-scrollbar,
+#quick-copy-section::-webkit-scrollbar,
+#profile-form::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+#job-autofill-sidebar::-webkit-scrollbar-track,
+#quick-copy-section::-webkit-scrollbar-track,
+#profile-form::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
+#job-autofill-sidebar::-webkit-scrollbar-thumb,
+#quick-copy-section::-webkit-scrollbar-thumb,
+#profile-form::-webkit-scrollbar-thumb {
+  background: #c1c1c1 !important;
+  border-radius: 3px !important;
+}
+
+#job-autofill-sidebar::-webkit-scrollbar-thumb:hover,
+#quick-copy-section::-webkit-scrollbar-thumb:hover,
+#profile-form::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1 !important;
+}
